@@ -12,6 +12,15 @@ def initialize_screen():
     implementation:
         - Didiboo v1 (11/05/25)
     """
+    screen = t.getscreen()
+    
+    screen.title("Nebulon Invasion: The Game")
+    screen.setup(width=0.5, height=0.75, startx=None, starty=None)
+
+    #Set the game background
+    background = screen.bgpic('assets/space_invaders_background.png')
+
+initialize_screen()
 
 def set_timer():
     """Set timer.
