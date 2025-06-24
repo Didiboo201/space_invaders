@@ -35,7 +35,8 @@ def draw_cannon():
 
     Version
     -------
-        - Didiboo (22/06/25)
+        - Didiboo v1 (22/06/25)
+        - Didiboo v2 (24/06/25)
     """
     cannon.clear()
     cannon.turtlesize(1, 4)  # Base
@@ -47,8 +48,6 @@ def draw_cannon():
     cannon.turtlesize(0.8, 0.3)  # Tip of cannon
     cannon.stamp()
     cannon.sety(cannon_zone)
-
-    screen.update() # update manually the screen
 
 # CANNON MOVEMENTS
 step = 10
