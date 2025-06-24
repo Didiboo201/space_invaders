@@ -31,6 +31,12 @@ cannon.setpos(0, cannon_zone)
 
 # cannon design
 def draw_cannon():
+    """Draws the laser cannon.
+
+    Version
+    -------
+        - Didiboo (22/06/25)
+    """
     cannon.clear()
     cannon.turtlesize(1, 4)  # Base
     cannon.stamp()
@@ -44,11 +50,15 @@ def draw_cannon():
 
     screen.update() # update manually the screen
 
-# cannon movements
+# CANNON MOVEMENTS
 step = 10
 
 def move_right():
     """Moves the cannon to the right.
+
+    Version
+    -------
+        - Didiboo v1 (22/06/25)
     """
     new_x = cannon.xcor() + step
 
@@ -58,6 +68,10 @@ def move_right():
 
 def move_left():
     """Moves the cannon to the left.
+
+    Version
+    -------
+        - Didiboo v1 (22/06/25)
     """
     new_x = cannon.xcor() - step
 
@@ -71,6 +85,7 @@ screen.onkeypress(move_right, "Right")
 screen.onkeypress(move_left, "Left")
 screen.onkeypress(screen.bye, "q")
 screen.listen()
+
 
 #Keeps the window open
 t.mainloop() 
