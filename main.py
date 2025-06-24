@@ -79,11 +79,46 @@ def move_left():
         cannon.setx(new_x)
         draw_cannon()
 
+# LASER
 
-# bind key to motion
+lasers = []
+
+def create_lasers():
+    """Creates the lasers.
+
+    Version
+    -------
+        - Didiboo (24/06/25)
+    """
+    laser = t.Turtle()
+
+    # laser design
+    laser.penup()
+    laser.color("#e9efec")
+
+    laser.hideturtle()
+
+    #position
+    laser.setposition(cannon.xcor(), cannon.ycor())
+
+    # movement
+    laser.setheading(90)
+    laser.forward(20) # laser start at the tip of the cannon
+
+    laser.pendown() #
+    laser.pensize(5)
+
+    #add laser to list
+    lasers.append(laser)
+
+    print(len(lasers))
+
+
+# bind key to actions
 screen.onkeypress(move_right, "Right")
 screen.onkeypress(move_left, "Left")
 screen.onkeypress(screen.bye, "q")
+screen.onkeypress(create_lasers, "space")
 screen.listen()
 
 
