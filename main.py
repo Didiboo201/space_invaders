@@ -141,6 +141,11 @@ screen.onkeypress(screen.bye, "q")
 screen.onkeypress(create_lasers, "space")
 screen.listen()
 
+# GAME LOOP
+while True:
+    for laser in lasers:
+        move_laser(laser)
+    screen.update() # update manually the screen
 
 #Keeps the window open
 t.mainloop() 
