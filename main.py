@@ -112,6 +112,27 @@ def create_lasers():
 
     print(len(lasers))
 
+laser_speed = 2
+laser_length = 20
+
+def move_laser(laser):
+    """Moves the laser forwards.
+
+    Parameter
+    ---------
+    laser : str
+        Laser of the cannon.
+    
+    Version
+    -------
+        - Didiboo v1 (24/06/25)
+    """
+    laser.clear()
+    laser.forward(laser_speed)
+    # Draw the laser
+    laser.forward(laser_length)
+    laser.forward(-laser_length)
+
 
 # bind key to actions
 screen.onkeypress(move_right, "Right")
