@@ -145,6 +145,15 @@ screen.listen()
 while True:
     for laser in lasers:
         move_laser(laser)
+
+        if laser.ycor() > top:
+            # make sure that the laser is no longer visible
+            laser.clear()
+            laser.hideturtle()
+
+            lasers.remove(laser) # removes the laser from the list
+            t.turtles().remove(laser) # removes the laser from the internal list of all Turtle objects
+    
     screen.update() # update manually the screen
 
 #Keeps the window open
