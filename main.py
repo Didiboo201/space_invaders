@@ -1,6 +1,7 @@
 
 import turtle as t 
-
+import random as r
+import time
 
 #GAME SCREEN
 
@@ -140,6 +141,37 @@ screen.onkeypress(move_left, "Left")
 screen.onkeypress(screen.bye, "q")
 screen.onkeypress(create_lasers, "space")
 screen.listen()
+
+# ALIENS
+
+aliens = []
+alien_spawn_interval = 1.2
+
+def create_alien():
+    """Create an alien.
+
+    Version
+    -------
+        - Didiboo v1 (07/07/25) 
+    """
+    alien = t.Turtle()
+
+    # alien design
+    alien.penup()
+    alien.color("#ec2929")
+    alien.shape('circle')
+
+    # set position to random pos at the top
+    xcor = r.randint(int(left + border), int(right - border))
+
+    # position
+    alien.setposition(xcor, top)
+
+    # movement
+    alien.setheading(-90) # head south
+
+    # add alien to list
+    aliens.append(alien)
 
 # GAME LOOP
 while True:
