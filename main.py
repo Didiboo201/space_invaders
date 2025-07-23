@@ -174,6 +174,8 @@ def create_alien():
     aliens.append(alien)
 
 # GAME LOOP
+alien_timer = 0
+
 while True:
     for laser in lasers:
         move_laser(laser)
@@ -186,6 +188,11 @@ while True:
             lasers.remove(laser) # removes the laser from the list
             t.turtles().remove(laser) # removes the laser from the internal list of all Turtle objects
     
+    # Spawns aliens
+    if time.time() - alien_timer > alien_spawn_interval:
+        create_alien()
+        alien_timer = time.time()
+
     screen.update() # update manually the screen
 
 #Keeps the window open
